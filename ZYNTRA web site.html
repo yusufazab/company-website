@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ZYNTRA — Digital Solution Agency</title>
+  <meta name="description" content="ZYNTRA — Digital Solution Agency. Marketing, Data Analytics, Web Design, Cyber Security, Graphic & Motion Design, Video Editing." />
+
+  <!-- Tailwind CDN (quick) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent1:#6C9BFF; /* light bluish */
+      --accent2:#39E6E0; /* cyan */
+      --bg-1:#050507;
+      --card:#0f1113;
+      --muted:#9aa3ad;
+      --glass: rgba(255,255,255,0.03);
+    }
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg-1),#070708);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+    }
+    .font-en{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;}
+    .font-ar{font-family:'Tajawal',system-ui,-apple-system,'Segoe UI',Roboto,Arial;}
+    .glass{background:var(--glass);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.03);border-radius:12px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .accent-grad{background:linear-gradient(90deg,var(--accent1),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .btn-primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#041018}
+    .reveal{opacity:0;transform:translateY(18px);transition:all .7s cubic-bezier(.16,.84,.44,1)}
+    .reveal.show{opacity:1;transform:none}
+    .hero-img{transition:transform .35s ease;will-change:transform}
+    .nav-link{color:rgba(255,255,255,0.78)}
+    .nav-link:hover{color:#fff}
+    @media (max-width:1024px){
+      .desktop-nav{display:none}
+      .mobile-nav{display:flex}
+    }
+    @media (min-width:1025px){
+      .mobile-nav{display:none}
+    }
+    /* small RTL fixes when arabic is active */
+    [dir="rtl"] .nav-link{direction:rtl}
+  </style>
+</head>
+<body class="font-en" dir="ltr">
+
+  <!-- NAVBAR -->
+  <header class="fixed left-0 right-0 top-4 z-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="glass flex items-center justify-between p-3 rounded-xl shadow-lg">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center font-bold text-black" style="background:linear-gradient(135deg,var(--accent1),var(--accent2));">Z</div>
+          <div>
+            <div class="font-semibold">ZYNTRA</div>
+            <div id="subline" class="text-xs text-[--muted]">Digital Solution Agency</div>
+          </div>
+        </div>
+
+        <nav class="desktop-nav flex items-center gap-6 text-sm">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#portfolio" class="nav-link">Portfolio</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#contact" class="nav-link">Contact</a>
+
+          <!-- Language toggle -->
+          <button id="langBtn" class="ml-4 px-3 py-1 rounded-full text-sm glass">EN | العربية</button>
+
+          <a href="#contact" class="ml-3 px-4 py-2 rounded-full btn-primary font-semibold">Get Started</a>
+        </nav>
+
+        <!-- mobile -->
+        <div class="mobile-nav items-center gap-3">
+          <button id="langBtnMobile" class="px-2 py-1 rounded-full text-sm glass">EN</button>
+          <a href="#contact" class="ml-2 px-3 py-1 rounded-full btn-primary text-sm">Start</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="home" class="max-w-6xl mx-auto px-6 pt-28 pb-24">
+    <!-- HERO -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center py-20">
+      <div>
+        <div class="reveal">
+          <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight accent-grad">ZYNTRA</h1>
+          <p id="tagline" class="mt-4 text-xl text-slate-300">Your Digital Transformation Partner</p>
+          <p id="heroDesc" class="mt-4 text-slate-400 max-w-xl">Full-service digital solutions: marketing, data analytics, web & app development, cyber security, visual & motion content — crafted to scale your business online.</p>
+
+          <div class="mt-6 flex gap-4">
+            <a href="#contact" class="btn-primary px-6 py-3 rounded-full font-semibold shadow-lg">Start Project</a>
+            <a href="#portfolio" class="glass px-5 py-3 rounded-full">View Work</a>
+          </div>
+
+          <div class="mt-6 flex gap-3 flex-wrap text-sm text-slate-300">
+            <span class="card px-3 py-2">🔒 Cyber Security</span>
+            <span class="card px-3 py-2">📊 Data-driven</span>
+            <span class="card px-3 py-2">⚡ Fast Delivery</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="card overflow-hidden relative">
+          <!-- Hero team image (local path you provided). Fallback to online image if not found. -->
+          <img id="teamImg" src="D:\Materials\technical\my company\WhatsApp Image 2025-08-01 at 10.00.30 PM.jpeg"
+               alt="Zyntra Team"
+               class="w-full h-80 object-cover hero-img"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80'">
+          <!-- (Featured label removed as requested) -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-12">
+      <h2 class="text-3xl text-slate-200 font-bold reveal">Our Services</h2>
+      <p class="text-slate-400 mt-2 reveal">Comprehensive digital capabilities across product, growth, and security.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+        <div class="svc card p-6 reveal">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-3" style="background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#041018;font-weight:700">DM</div>
+          <h3 class="font-semibold text-lg">Digital Marketing</h3>
+          <p class="text-slate-400 mt-2 text-sm">Social media, SEO, paid campaigns, growth strategy.</p>
+        </div>
+
+        <div class="svc card p-6 reveal">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-3" style="background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#041018;font-weight:700">DA</div>
+          <h3 class="font-semibold text-lg">Data Analysis</h3>
+          <p class="text-slate-400 mt-2 text-sm">Power BI dashboards, reporting, actionable insights.</p>
+        </div>
+
+        <div class="svc card p-6 reveal">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-3" style="background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#041018;font-weight:700">WD</div>
+          <h3 class="font-semibold text-lg">Web Development</h3>
+          <p class="text-slate-400 mt-2 text-sm">Responsive sites, e-commerce, performance & accessibility.</p>
+        </div>
+
+        <div class="svc card p-6 reveal">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-3" style="background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#041018;font-weight:700">CS</div>
+          <h3 class="font-semibold text-lg">Cyber Security</h3>
+          <p class="text-slate-400 mt-2 text-sm">Pen-testing, monitoring, app & infra hardening.</p>
+        </div>
+
+        <div class="svc card p-6 reveal">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-3" style="background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#041018;font-weight:700">GD</div>
+          <h3 class="font-semibold text-lg">Graphic Design</h3>
+          <p class="text-slate-400 mt-2 text-sm">Brand identity, posts, UI visuals.</p>
+        </div>
+
+        <div class="svc card p-6 reveal">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-3" style="background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#041018;font-weight:700">MG</div>
+          <h3 class="font-semibold text-lg">Motion & Video</h3>
+          <p class="text-slate-400 mt-2 text-sm">Animated promos, intros, video editing.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="py-12">
+      <h2 class="text-3xl text-slate-200 font-bold reveal">Portfolio</h2>
+      <p class="text-slate-400 mt-2 reveal">Selected projects — replace links/images as needed.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+        <!-- Levantine (local path provided) -->
+        <a class="card p-4 reveal" href="https://levantine.ae/arabic/" target="_blank" rel="noopener">
+          <img src="D:\Materials\technical\my company\logo-2023-768x236.png"
+               alt="Levantine Clinic"
+               class="w-full h-36 object-contain rounded-md mb-3"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?auto=format&fit=crop&w=900&q=60'">
+          <h4 class="font-semibold">Levantine Dental Clinic</h4>
+          <p class="text-slate-400 text-sm mt-1" data-key-en="Website design and marketing campaigns — Dental Clinic." data-key-ar="تصميم موقع و حملات دعائية — عيادة أسنان">Website design and marketing campaigns — Dental Clinic.</p>
+        </a>
+
+        <!-- Abu Al Khier (local path provided) -->
+        <a class="card p-4 reveal" href="http://abulkhiergroup.com/" target="_blank" rel="noopener">
+          <img src="D:\Materials\technical\my company\firstLogo.jpg"
+               alt="Abu Al Khier"
+               class="w-full h-36 object-contain rounded-md mb-3"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=60'">
+          <h4 class="font-semibold">Abu Al Khier Group</h4>
+          <p class="text-slate-400 text-sm mt-1" data-key-en="Website design for a Translation & Immigration Office." data-key-ar="تصميم موقع لمكتب ترجمة و سفر و هجرة">Website design for a Translation & Immigration Office.</p>
+        </a>
+
+        <!-- Analytics Dashboard (local path + link + description) -->
+        <a class="card p-4 reveal" href="https://www.linkedin.com/posts/yusuf-abdelsalam-925112371_hranalytics-datadashboard-activity-7359675102319325185-dXw9" target="_blank" rel="noopener">
+          <img src="D:\Materials\technical\my company\Screenshot 2025-08-02 132147.png"
+               alt="HR Analytics Dashboard"
+               class="w-full h-36 object-cover rounded-md mb-3"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=60'">
+          <h4 class="font-semibold">HR Analytics Dashboard</h4>
+          <p class="text-slate-400 text-sm mt-1" data-key-en="HR dashboard for Abu Al Khier office." data-key-ar="لوحة تحليلات HR لمكتب أبو الخير">HR dashboard for Abu Al Khier office.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-12">
+      <h2 class="text-3xl text-slate-200 font-bold reveal">About Us</h2>
+      <p id="aboutDesc" class="text-slate-400 mt-2 reveal max-w-3xl">Founded in September 2024, ZYNTRA is a full-service digital solutions agency based in Alexandria, Egypt. We are graduates of the Rowad Misr Initiative and have delivered many successful projects across marketing, platforms & analytics.</p>
+
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="card p-4 reveal">
+          <div class="font-semibold">Owner</div>
+          <div class="text-slate-400">Yusuf Abdelsalam</div>
+        </div>
+        <div class="card p-4 reveal">
+          <div class="font-semibold">Established</div>
+          <div class="text-slate-400">September 2024</div>
+        </div>
+        <div class="card p-4 reveal">
+          <div class="font-semibold">Location</div>
+          <div class="text-slate-400">Fleming, Alexandria</div>
+          <div class="text-slate-400 mt-2">Phone: <a href="tel:+201055143497" class="text-slate-200">01055143497</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-12">
+      <h2 class="text-3xl text-slate-200 font-bold reveal">Contact</h2>
+      <p id="contactDesc" class="text-slate-400 mt-2 reveal">Let's start your next digital project — send the details and we'll reply.</p>
+
+      <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="card p-6 reveal">
+          <h3 class="font-semibold">Get in touch</h3>
+          <p class="text-slate-400 mt-2">Email: <a href="mailto:zyntraagency@gmail.com" class="text-slate-200">zyntraagency@gmail.com</a><br>Phone: <a href="tel:+201055143497" class="text-slate-200">01055143497</a></p>
+          <div class="mt-4 text-sm text-slate-400">Office location:</div>
+          <div class="mt-2 map-frame rounded-md overflow-hidden">
+            <!-- Embedded map (search Fleming Alexandria) -->
+            <iframe src="https://www.google.com/maps?q=Fleming+Alexandria&output=embed" width="100%" height="300" style="border:0" loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <!-- CONTACT FORM -->
+        <!--
+          By default this form uses Formspree if you set FORMSPREE_ID below.
+          If you don't use Formspree and your host supports PHP, place send.php on your server
+          and the form will POST to send.php (fallback).
+        -->
+        <form id="contactForm" class="card p-6 reveal" onsubmit="return submitContactForm(event);">
+          <input required name="name" id="c_name" placeholder="Name" class="w-full p-3 rounded-md bg-transparent border border-white/6 mb-3">
+          <input required name="email" id="c_email" type="email" placeholder="Email" class="w-full p-3 rounded-md bg-transparent border border-white/6 mb-3">
+          <textarea required name="message" id="c_message" rows="5" placeholder="Message" class="w-full p-3 rounded-md bg-transparent border border-white/6 mb-3"></textarea>
+          <div class="flex items-center gap-3">
+            <button type="submit" id="contactSubmit" class="btn-primary px-4 py-3 rounded-full font-semibold">Send Message</button>
+            <div id="contactStatus" class="text-sm text-slate-400"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="py-8 text-center text-sm text-slate-400">
+      © <span id="year"></span> ZYNTRA — All Rights Reserved. Built by Yusuf Abdelsalam.
+    </footer>
+  </main>
+
+  <!-- SCRIPTS: translations, reveal on scroll, language toggle, contact submit -->
+  <script>
+    // --- Config ---
+    // If you want Formspree: create a form in Formspree and put its ID here (e.g. 'mzbwnrpl')
+    // then the code will POST to https://formspree.io/f/{FORMSPREE_ID}
+    // otherwise leave empty and the form will try to POST to send.php (server must support PHP)
+    const FORMSPREE_ID = ''; // <-- <-- put your Formspree id between the quotes if you use Formspree
+
+    const EMAIL_FALLBACK = 'zyntraagency@gmail.com'; // used in the PHP fallback
+
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Translations
+    const TRANSLATIONS = {
+      en: {
+        home: 'Home', services: 'Services', portfolio: 'Portfolio', about: 'About', contact: 'Contact',
+        subline: 'Digital Solution Agency',
+        tagline: 'Your Digital Transformation Partner',
+        heroDesc: 'Full-service digital solutions: marketing, data analytics, web & app development, cyber security, visual & motion content — crafted to scale your business online.',
+        servicesTitle: 'Our Services',
+        portfolioTitle: 'Portfolio',
+        aboutTitle: 'About Us',
+        aboutDesc: 'Founded in September 2024, ZYNTRA is a full-service digital solutions agency based in Alexandria, Egypt. We are graduates of the Rowad Misr Initiative and have delivered many successful projects across marketing, platforms & analytics.',
+        contactTitle: 'Contact',
+        contactDesc: "Let's start your next digital project — send the details and we'll reply.",
+        getStarted: 'Get Started', startProject: 'Start Project', viewWork: 'View Work',
+        owner:'Owner', established:'Established', location:'Location',
+        levantineDesc: 'Website design and marketing campaigns — Dental Clinic.',
+        abulkhierDesc: 'Website design for a Translation & Immigration Office.',
+        analyticsDesc: 'HR dashboard for Abu Al Khier office.'
+      },
+      ar: {
+        home: 'الرئيسية', services: 'الخدمات', portfolio: 'الأعمال', about: 'من نحن', contact: 'تواصل',
+        subline: 'Digital Solution Agency',
+        tagline: 'شريكك في التحوّل الرقمي',
+        heroDesc: 'حلول رقمية متكاملة: تسويق، تحليل بيانات، تطوير مواقع وتطبيقات، أمن سيبراني، ومحتوى مرئي وموشن — مصممة لتطوير عملك على الإنترنت.',
+        servicesTitle: 'خدماتنا',
+        portfolioTitle: 'أعمالنا',
+        aboutTitle: 'من نحن',
+        aboutDesc: 'تأسست في سبتمبر 2024، ZYNTRA شركة حلول رقمية متكاملة مقرها الإسكندرية، مصر. نحن خريجو مبادرة رواد مصر ونفذنا العديد من المشاريع الناجحة في التسويق والتحليلات والمنصات.',
+        contactTitle: 'تواصل معنا',
+        contactDesc: 'هيا نبدأ مشروعك الرقمي القادم — أرسل التفاصيل وسنعاود التواصل.',
+        getStarted: 'ابدأ الآن', startProject: 'ابدأ مشروعك', viewWork: 'اطلع أعمالنا',
+        owner:'المالك', established:'التأسيس', location:'الموقع',
+        levantineDesc: 'تصميم موقع و حملات دعائية — عيادة أسنان',
+        abulkhierDesc: 'تصميم موقع لمكتب ترجمة و سفر و هجرة',
+        analyticsDesc: 'لوحة تحليلات HR لمكتب أبو الخير'
+      }
+    };
+
+    // Map keys -> selectors
+    const NAV_SELECTORS = [
+      { sel: 'a[href="#home"]', key: 'home' },
+      { sel: 'a[href="#services"]', key: 'services' },
+      { sel: 'a[href="#portfolio"]', key: 'portfolio' },
+      { sel: 'a[href="#about"]', key: 'about' },
+      { sel: 'a[href="#contact"]', key: 'contact' },
+      { sel: '#subline', key: 'subline' },
+      { sel: '#tagline', key: 'tagline' },
+      { sel: '#heroDesc', key: 'heroDesc' },
+      { sel: '#aboutDesc', key: 'aboutDesc' },
+      { sel: '#contactDesc', key: 'contactDesc' }
+    ];
+
+    // default language
+    let lang = localStorage.getItem('zyntra_lang') || 'en';
+
+    function applyTranslations(toLang) {
+      const t = TRANSLATIONS[toLang] || TRANSLATIONS.en;
+
+      NAV_SELECTORS.forEach(item=>{
+        const el = document.querySelector(item.sel);
+        if(el) el.textContent = t[item.key] || el.textContent;
+      });
+
+      // nav links
+      const navMap = [
+        {sel:'a[href="#home"]', key:'home'},
+        {sel:'a[href="#services"]', key:'services'},
+        {sel:'a[href="#portfolio"]', key:'portfolio'},
+        {sel:'a[href="#about"]', key:'about'},
+        {sel:'a[href="#contact"]', key:'contact'}
+      ];
+      navMap.forEach(i=>{
+        const e=document.querySelector(i.sel);
+        if(e) e.textContent = t[i.key];
+      });
+
+      // buttons & viewWork
+      const heroBtn = document.querySelector('.btn-primary');
+      if(heroBtn) heroBtn.textContent = t.startProject;
+      const viewWork = document.querySelector('a[href="#portfolio"].glass');
+      if(viewWork) viewWork.textContent = t.viewWork;
+
+      // portfolio descriptions
+      // Levantine
+      const levP = document.querySelector('#portfolio a[href^="https://levantine"] p');
+      if(levP) levP.textContent = toLang === 'ar' ? t.levantineDesc : t.levantineDesc;
+      // Abu al khier
+      const abuP = document.querySelector('#portfolio a[href^="http://abulkhiergroup"] p');
+      if(abuP) abuP.textContent = toLang === 'ar' ? t.abulkhierDesc : t.abulkhierDesc;
+      // Analytics
+      const analyticsP = document.querySelector('#portfolio a[href^="https://www.linkedin.com"] p');
+      if(analyticsP) analyticsP.textContent = toLang === 'ar' ? t.analyticsDesc : t.analyticsDesc;
+
+      // about / contact paragraphs
+      const aboutP = document.getElementById('aboutDesc'); if(aboutP) aboutP.textContent = t.aboutDesc;
+      const contactP = document.getElementById('contactDesc'); if(contactP) contactP.textContent = t.contactDesc;
+
+      // change direction / font
+      if(toLang === 'ar') {
+        document.documentElement.lang = 'ar';
+        document.body.classList.remove('font-en'); document.body.classList.add('font-ar');
+        document.documentElement.dir = 'rtl';
+      } else {
+        document.documentElement.lang = 'en';
+        document.body.classList.remove('font-ar'); document.body.classList.add('font-en');
+        document.documentElement.dir = 'ltr';
+      }
+
+      // update lang btn labels (keeps same visual)
+      const langBtn = document.getElementById('langBtn'); const langBtnMobile = document.getElementById('langBtnMobile');
+      if(langBtn) langBtn.textContent = (toLang === 'en') ? 'EN | العربية' : 'EN | العربية';
+      if(langBtnMobile) langBtnMobile.textContent = (toLang === 'en') ? 'EN' : 'ع';
+
+      localStorage.setItem('zyntra_lang', toLang); lang = toLang;
+    }
+
+    // initial apply
+    applyTranslations(lang);
+
+    // language toggle handlers
+    document.getElementById('langBtn').addEventListener('click', ()=> applyTranslations(lang === 'en' ? 'ar' : 'en'));
+    document.getElementById('langBtnMobile').addEventListener('click', ()=> applyTranslations(lang === 'en' ? 'ar' : 'en'));
+
+    // reveal on scroll
+    (function(){
+      const els = Array.from(document.querySelectorAll('.reveal'));
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(ent=>{
+          if(ent.isIntersecting){ ent.target.classList.add('show'); io.unobserve(ent.target); }
+        });
+      }, {threshold: 0.12});
+      els.forEach(e=>io.observe(e));
+    })();
+
+    // hero image parallax
+    (function(){
+      const img = document.querySelector('.hero-img');
+      if(!img) return;
+      window.addEventListener('mousemove', e=>{
+        const x = (e.clientX - window.innerWidth/2) / 60;
+        const y = (e.clientY - window.innerHeight/2) / 80;
+        img.style.transform = `translate3d(${x}px, ${y}px, 0) scale(1.02)`;
+      });
+      window.addEventListener('mouseleave', ()=> img.style.transform = 'none');
+    })();
+
+    // smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const href = a.getAttribute('href');
+        if(!href || href === '#') return;
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+
+    // Contact form submit: tries Formspree if ID provided, otherwise posts to send.php (PHP fallback)
+    async function submitContactForm(e){
+      e.preventDefault();
+      const statusEl = document.getElementById('contactStatus');
+      const submitBtn = document.getElementById('contactSubmit');
+      submitBtn.disabled = true;
+      statusEl.textContent = 'Sending...';
+
+      const name = document.getElementById('c_name').value.trim();
+      const email = document.getElementById('c_email').value.trim();
+      const message = document.getElementById('c_message').value.trim();
+
+      const payload = { name, email, message };
+
+      try {
+        if(FORMSPREE_ID && FORMSPREE_ID.length > 3){
+          // submit to Formspree
+          const url = 'https://formspree.io/f/' + FORMSPREE_ID;
+          const res = await fetch(url, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name, email, message, _subject: 'New contact from ZYNTRA website'
+            })
+          });
+          const data = await res.json();
+          if(res.ok){ statusEl.textContent = 'Sent! We will contact you shortly.'; document.getElementById('contactForm').reset(); }
+          else { statusEl.textContent = data.error || 'Error sending form. Please try again later.'; }
+        } else {
+          // fallback to POST to send.php (server must support PHP)
+          const res = await fetch('send.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({ name, email, message, to: EMAIL_FALLBACK })
+          });
+          const text = await res.text();
+          if(res.ok){ statusEl.textContent = 'Sent! We will contact you shortly.'; document.getElementById('contactForm').reset(); }
+          else { statusEl.textContent = text || 'Error sending form (PHP).'; }
+        }
+      } catch(err){
+        console.error(err);
+        statusEl.textContent = 'Error. Check your connection or server config.';
+      } finally {
+        submitBtn.disabled = false;
+        setTimeout(()=>{ statusEl.textContent = ''; }, 6000);
+      }
+      return false;
+    }
+  </script>
+</body>
+</html>
